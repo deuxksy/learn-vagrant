@@ -14,7 +14,8 @@ Vagrant.configure(Vagrant_API_Version) do |config|
     end
     # cfg.vm.disk :disk, size: "16GB", primary: true
     cfg.vm.hostname = "rs-master"
-    cfg.vm.provision "shell", path: "bootstrap.sh"
+    cfg.vm.provision "shell", path: "./shell/bootstrap-all.sh"
+    cfg.vm.provision "shell", path: "./shell/bootstrap-master.sh"
     cfg.vm.network "public_network", ip: "192.168.3.81", bridge: "eno1"
   end
 
@@ -27,7 +28,8 @@ Vagrant.configure(Vagrant_API_Version) do |config|
     end
     # cfg.vm.disk :disk, size: "8GB", primary: true
     cfg.vm.hostname = "rs-node01"
-    cfg.vm.provision "shell", path: "bootstrap.sh"
+    cfg.vm.provision "shell", path: "./shell/bootstrap-all.sh"
+    cfg.vm.provision "shell", path: "./shell/bootstrap-node.sh"
     cfg.vm.network "public_network", ip: "192.168.3.91", bridge: "eno1"
   end
 
@@ -40,7 +42,8 @@ Vagrant.configure(Vagrant_API_Version) do |config|
     end
     # cfg.vm.disk :disk, size: "8GB", primary: true
     cfg.vm.hostname = "rs-node02"
-    cfg.vm.provision "shell", path: "bootstrap.sh"
+    cfg.vm.provision "shell", path: "./shell/bootstrap-all.sh"
+    cfg.vm.provision "shell", path: "./shell/bootstrap-node.sh"
     cfg.vm.network "public_network", ip: "192.168.3.92", bridge: "eno1"
   end
 
@@ -53,7 +56,8 @@ Vagrant.configure(Vagrant_API_Version) do |config|
     end
     # cfg.vm.disk :disk, size: "8GB", primary: true
     cfg.vm.hostname = "rs-node03"
-    cfg.vm.provision "shell", path: "bootstrap.sh"
+    cfg.vm.provision "shell", path: "./shell/bootstrap-all.sh"
+    cfg.vm.provision "shell", path: "./shell/bootstrap-node.sh"
     cfg.vm.network "public_network", ip: "192.168.3.93", bridge: "eno1"
   end
 
