@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-kubeadm init
+# kubeadm init
+# init kubernetes 
+kubeadm init --token 123456.1234567890123456 --token-ttl 0 \
+--pod-network-cidr=172.16.0.0/16 --apiserver-advertise-address=192.168.1.81
 
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
