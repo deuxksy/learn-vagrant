@@ -44,7 +44,7 @@ Vagrant.configure(Vagrant_API_Version) do |config|
     cfg.vm.hostname = "node2"
     cfg.vm.provision "shell", path: "./shell/bootstrap-all.sh"
     cfg.vm.provision "shell", path: "./shell/bootstrap-node.sh"
-    cfg.vm.network "public_network", ip: "192.168.1.92", bridge: "enp0s3: Realtek PCIe GBE Family Controller #2"
+    cfg.vm.network "public_network", ip: "192.168.1.92", bridge: "Realtek PCIe GBE Family Controller #2"
   end
 
   # config.vm.define "node3" do |cfg|
